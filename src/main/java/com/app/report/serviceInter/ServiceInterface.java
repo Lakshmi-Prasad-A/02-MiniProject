@@ -1,25 +1,24 @@
 package com.app.report.serviceInter;
 
-
 import java.util.List;
 
-import com.app.report.entity.Plans;
-import com.app.report.entity.UserReports;
+import javax.servlet.http.HttpServletResponse;
 
+import com.app.report.entity.Plans;
+import com.app.report.entity.SearchRequest;
+import com.app.report.entity.UserReports;
 
 public interface ServiceInterface {
 
-	
-	public List<UserReports> findAll();
-	
-	public List<UserReports> findByPlanName(String planName);
-	
-	public List<UserReports> findByStatus(String status);
-	
-	public List<UserReports> findByNameAndStatus (String planName, String status);
-	
-	
-	
-	
+	public List<String> findByPlanName();
 
+	public List<String> findByPlanStatus();
+
+	public List<UserReports> getUserReportsPlans(SearchRequest request);
+
+	
+	public void exportExcel(HttpServletResponse response) throws Exception;
+	
+	public void exportPdf(HttpServletResponse response) throws Exception;
+	
 }

@@ -31,7 +31,7 @@ public class UserReports {
 	private Integer mobilenum;
 	private String gender;
 	private Integer ssn;
-	private String status;
+	private String planStatus;
 	
 	@ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name="uidFk")
